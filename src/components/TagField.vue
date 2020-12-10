@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-combobox
       v-model="model"
-      label="Add your tags"
+      v-label="$t('tagField.label')"
       multiple
       small-chips
       dark

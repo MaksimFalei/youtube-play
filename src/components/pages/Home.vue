@@ -1,15 +1,15 @@
 <template>
   <div class="d-flex flex-column align-center">
-    <h1>This app will help you to manage your playlists for YouTube!</h1>
+    <h1>{{ $t('app.description.header') }}</h1>
     <div>
-      <h3>You can:</h3>
+      <h3>{{ $t('app.description.subHeader') }}</h3>
       <ul>
-        <li>create a new playlist.</li>
-        <li>add videos to the playlist.</li>
-        <li>remove videos from the playlist.</li>
-        <li>change the video order in the playlist.</li>
-        <li>delete the playlist.</li>
-        <li>search videos on the YouTube.</li>
+        <li>{{ $t('app.description.case1') }}</li>
+        <li>{{ $t('app.description.case2') }}</li>
+        <!-- <li>remove videos from the playlist.</li> -->
+        <!-- <li>change the video order in the playlist.</li> -->
+        <li>{{ $t('app.description.case5') }}</li>
+        <li>{{ $t('app.description.case6') }}</li>
       </ul>
     </div>
   </div>

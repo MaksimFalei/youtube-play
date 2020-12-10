@@ -1,4 +1,5 @@
 module.exports = {
+  setupFiles: ['./tests/setup.js'],
   moduleFileExtensions: [
     'js',
     'vue',

@@ -3,8 +3,10 @@
     <v-card>
       <SearchComponent v-model="queryString"></SearchComponent>
       <v-container class="d-flex flex-no-wrap justify-space-between">
-        <v-btn light link to="playlists/edit">Create new PlayList</v-btn>
-        <v-btn light @click="loadPlaylists">Update</v-btn>
+        <v-btn light link to="playlists/edit">{{
+          $t("playlists.createNew")
+        }}</v-btn>
+        <v-btn light @click="loadPlaylists">{{ $t("actions.update") }}</v-btn>
       </v-container>
     </v-card>
     <v-container>
@@ -17,11 +19,11 @@
           @action2="onDelete(item)"
         >
           <template v-slot:firstBtnIcon> mdi-circle-edit-outline </template>
-          <template v-slot:firstBtnText> Edit </template>
+          <template v-slot:firstBtnText> {{ $t("actions.edit") }} </template>
           <template v-slot:secondBtnIcon> mdi-delete-off-outline </template>
-          <template v-slot:secondBtnText> Delete </template>
+          <template v-slot:secondBtnText> {{ $t("actions.delete") }} </template>
           <template v-slot:firstIcon>
-            <span>Published At: </span>
+            <span>{{ $t("playlists.published") }}: </span>
           </template>
           <template v-slot:firstIconContent>
             {{ item.publishedAt | dateFormat }}

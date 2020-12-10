@@ -24,7 +24,7 @@
           </v-list-item-avatar>
           <v-fade-transition>
             <v-list-item-content v-if="hover" class="d-flex account-icon">
-              <v-list-item-title>Log out</v-list-item-title>
+              <v-list-item-title> {{ $t('navbar.logOut') }} </v-list-item-title>
             </v-list-item-content>
           </v-fade-transition>
         </v-list-item>
@@ -38,7 +38,7 @@
             <v-icon> mdi-account </v-icon>
           </v-list-item-avatar>
           <v-list-item-content class="d-flex">
-            <v-list-item-title>Sign in</v-list-item-title>
+            <v-list-item-title> {{ $t('navbar.signIn') }} </v-list-item-title>
           </v-list-item-content>
         </v-btn>
       </v-list-item>
@@ -47,31 +47,32 @@
     <v-list nav>
       <v-list-item link to="/">
         <v-list-item-content>
-          <v-list-item-title> Home </v-list-item-title>
+          <v-list-item-title> {{ $t('navbar.home') }} </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
       <v-list-item link to="/videos">
         <v-list-item-content>
-          <v-list-item-title> Search video </v-list-item-title>
+          <v-list-item-title> {{ $t('navbar.search') }} </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
       <v-list-item link to="/playlists">
         <v-list-item-content>
-          <v-list-item-title> My Playlists </v-list-item-title>
+          <v-list-item-title> {{ $t('navbar.playlists') }} </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
-      <v-list-item link to="/contact">
+      <v-list-item>
         <v-list-item-content>
-          <v-list-item-title> Contact Us </v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-list-item link to="/additional">
-        <v-list-item-content>
-          <v-list-item-title> Additional info </v-list-item-title>
+          <v-select
+            :items="[
+              { text: $t('lang.en'), value: 'en' },
+              { text: $t('lang.ru'), value: 'ru' },
+            ]"
+            @input="onChangeLocale"
+            v-model="locale"
+          />
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -85,6 +86,11 @@ export default {
   name: "NavBar",
   computed: {
     ...mapGetters(["currentUser"]),
+  },
+  data() {
+    return {
+      locale: this.$i18n.locale,
+    }
   },
   methods: {
     async onLogin() {
@@ -112,6 +118,9 @@ export default {
       } catch (error) {
         console.error("error: ", error);
       }
+    },
+    onChangeLocale() {
+      this.$i18n.locale = this.locale;
     },
   },
 };

@@ -4,15 +4,20 @@
       class="mx-4"
       flat
       hide-details
-      label="Search"
       prepend-inner-icon="mdi-magnify"
       solo-inverted
       clearable
       v-model="internalValue"
       @input="!searchButton ? onSearch() : null"
       @click:clear="onClear"
-    ></v-text-field>
-    <v-btn v-if="searchButton" dark @click="onSearch">Search</v-btn>
+    >
+      <template v-slot:label>
+        {{ $t('actions.search') }}
+      </template>
+    </v-text-field>
+    <v-btn v-if="searchButton" dark @click="onSearch">{{
+      $t("actions.search")
+    }}</v-btn>
   </v-toolbar>
 </template>
 

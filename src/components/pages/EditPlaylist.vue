@@ -5,20 +5,20 @@
         <v-btn icon dark @click="onBack()">
           <v-icon>mdi-arrow-left-circle-outline</v-icon>
         </v-btn>
-        <v-toolbar-title>Playlist</v-toolbar-title>
+        <v-toolbar-title>{{ $t('editPage.pageTitle') }}</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items>
-          <v-btn dark text @click="onSave()"> Save </v-btn>
+          <v-btn dark text @click="onSave()">{{ $t('actions.save') }}</v-btn>
         </v-toolbar-items>
       </v-toolbar>
       <v-list three-line subheader>
-        <v-subheader>General</v-subheader>
+        <v-subheader>{{ $t('editPage.general') }}</v-subheader>
         <v-list-item>
           <v-container fluid>
             <v-text-field
               v-model="title"
               :rules="titleRules"
-              label="Title"
+              v-label="$t('editPage.title')"
               required
             ></v-text-field>
           </v-container>
@@ -26,7 +26,7 @@
         <v-list-item>
           <v-container fluid>
             <v-textarea
-              label="Description"
+              v-label="$t('editPage.description')"
               v-model="description"
               :rules="descriptionRules"
             ></v-textarea>
@@ -37,9 +37,9 @@
             <v-checkbox v-model="privacy"></v-checkbox>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Private playlist?</v-list-item-title>
+            <v-list-item-title>{{ $t('editPage.privacy') }}</v-list-item-title>
             <v-list-item-subtitle
-              >The playlist's privacy status</v-list-item-subtitle
+              >{{ $t('editPage.privacySub') }}</v-list-item-subtitle
             >
           </v-list-item-content>
         </v-list-item>

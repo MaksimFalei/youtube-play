@@ -33,7 +33,7 @@
                 </v-btn>
               </template>
               <span>
-                <slot name="firstBtnText"> Edit </slot>
+                <slot name="firstBtnText"> {{ $t("actions.edit") }} </slot>
               </span>
             </v-tooltip>
             <v-tooltip bottom>

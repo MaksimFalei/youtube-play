@@ -1,6 +1,6 @@
 <template>
-  <div ref="top">
-    <v-card>
+  <div>
+    <v-card ref="top">
       <SearchComponent searchButton v-model="queryString"></SearchComponent>
     </v-card>
     <v-container>
@@ -13,9 +13,9 @@
           @action2="onDelete(item)"
         >
           <template v-slot:firstBtnIcon> mdi-heart-plus-outline </template>
-          <template v-slot:firstBtnText> Add </template>
+          <template v-slot:firstBtnText>{{ $t("actions.add") }}</template>
           <template v-slot:secondBtnIcon> mdi-play-circle </template>
-          <template v-slot:secondBtnText> Play </template>
+          <template v-slot:secondBtnText> {{ $t("actions.paly") }} </template>
           <template v-slot:firstIcon>
             <v-icon class="mr-1">mdi-eye-circle-outline</v-icon>
           </template>
@@ -31,10 +31,9 @@
         </ItemCard>
       </v-row>
     </v-container>
-    <v-card-text style="height: 100px; position: relative">
+    <v-card-text style="height: 100px; position: relative" v-show="isLoadingNeeded">
       <v-fab-transition>
         <v-btn
-          v-show="!hidden"
           color="primary"
           fixed
           dark
@@ -49,7 +48,7 @@
     </v-card-text>
     <v-card color="primary" dark v-show="isLoadingNeeded" ref="paragraph">
       <v-card-text>
-        Please stand by
+        {{ $t("actions.loader") }}
         <v-progress-linear
           indeterminate
           color="white"
@@ -83,7 +82,6 @@ export default {
       queryString: "",
       dialog: false,
       videoId: null,
-      hidden: false,
     };
   },
   methods: {

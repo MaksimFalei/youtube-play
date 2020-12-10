@@ -1,0 +1,61 @@
+{
+  "navbar": {
+    "signIn": "Sign In",
+    "logOut": "Log Out",
+    "home": "Home",
+    "search": "Search video",
+    "playlists": "My Playlists"
+  },
+  "app": {
+    "description": {
+      "header": "This app will help you to manage your playlists for YouTube!",
+      "subHeader": "You can:",
+      "case1": "create a new playlist.",
+      "case2": "add videos to the playlist.",
+      "case3": "remove videos from the playlist.",
+      "case4": "change the video order in the playlist.",
+      "case5": "delete the playlist.",
+      "case6": "search videos on the YouTube."
+    }
+  },
+  "editPlaylist": {
+      "pageTitle": "Playlist",
+      "title": "Title",
+      "general": "General",
+      "privacy": "Private playlist?",
+      "privacySub": "The playlist's privacy status",
+      "description": "Description"
+  },
+  "lang": {
+    "en": "English",
+    "ru": "Russian"
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "update": "Update",
+    "add": "Add",
+    "play": "Play",
+    "loader": "Please stand by",
+    "ok": "Ok"
+  },
+  "deleteConfirm": {
+    "question": "Are you sure?",
+    "description": "You are going to delete"
+  },
+  "playlists": {
+    "published": "Published At",
+    "createNew": "Create new PlayList"
+  },
+  "tagField": {
+    "label": "Add your tags"
+  },
+  "dialog": {
+    "title": "Select a Playlist",
+    "label": "A Select List"
+  }
+}
